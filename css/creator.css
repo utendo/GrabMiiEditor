@@ -1,0 +1,382 @@
+@font-face{
+    font-family: 'Nintendo UI';
+    src: url('../fonts/nintendo.woff');
+}
+
+body {
+    font-family: 'Nintendo UI', sans-serif !important;
+}
+
+.creator {
+    width: 100%;
+    min-height: 400px;
+
+    background: linear-gradient(#ffffff, #e0e0e0);
+    border-radius: 3px;
+    overflow: hidden;
+
+    box-shadow: 0px 2px 2px #00000055;
+
+    transition: height 1s linear;
+}
+
+.fullCreator {
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(#ffffff, #e0e0e0);
+    border-radius: 0px;
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.creatorBody {
+    padding: 0;
+    margin: 0;
+}
+
+.creator * {
+    user-select: none;
+    pointer-events: none;
+}
+
+/* intro */
+.intl img {
+    object-fit: contain;
+    animation: miis 1s infinite alternate ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    .intl img {
+        width: 25%;
+    }
+}
+
+@keyframes miis {
+    0% {
+        transform: translateY(-5px) translateX(10px);
+        filter: drop-shadow(4px 13px 3px rgba(0, 0, 0, 0.5));
+    }
+    100% {
+        transform: translateY(5px) translateX(10px);
+        filter: drop-shadow(4px 7px 2px rgba(0, 0, 0, 0.5));
+    }
+}
+
+.intl {
+    display: flex;
+    margin: 20px;
+}
+
+.intl_text {
+    margin: 0px 20px;
+}
+
+.intl_text h2 {
+    font-size: 36px;
+    font-weight: 800 !important;
+    color: #446B6E;
+    text-shadow: 0px 2px 2px #00000040;
+}
+
+.intl_text small {
+    opacity: 50%;
+}
+
+.start {
+    margin: 20px 40px;
+}
+
+.start h3 {
+    color: #446B6E;
+    text-shadow: 0px 2px 2px #00000040;
+}
+
+.start input {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 300px;
+    font-weight: 500;
+    pointer-events: all;
+}
+
+.start input:focus {
+    border: 1px solid #666;
+    outline: none;
+}
+
+.start button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background: linear-gradient(#5f9599, #263c3d);
+    border: 1px solid #888;
+    color: #fff;
+    font-weight: 550;
+    border-radius: 5px;
+    pointer-events: all;
+}
+
+.start button:hover {
+    background: #5f9599;
+    cursor: pointer;
+}
+
+.start button:active {
+    background: #263c3d;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+    .start input {
+        width: 50%;
+    }
+}
+
+/* loading */
+#loading {
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* final */
+#final {
+    display: flex;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.user {
+    background: linear-gradient(#555, #888);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user img {
+    width: 200px;
+    height: auto;
+    background: none;
+}
+
+#user-name {
+    text-align: center;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+#whash {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    pointer-events: all;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#whash:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+#whash:active {
+    color: lime;
+}
+
+.poses {
+    margin: 25px 30px;
+}
+
+.poses h3 {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.poses .subtitl {
+    margin: 0;
+    margin-top: 5px;
+    opacity: 50%;
+}
+
+#poses {
+    margin-top: 15px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.pose {
+    margin: 0;
+
+    height: 96px;
+    width: 96px;
+
+    overflow: hidden;
+    display: flex;
+
+    background: linear-gradient(#999, #777);
+    border-radius: 8px;
+
+    box-shadow: 0px 2px 2px #00000055;
+
+    transition: 0.1s ease-out;
+    pointer-events: all;
+}
+
+.pose img {
+    animation: minipose 1s infinite alternate ease-in-out;
+}
+
+@keyframes minipose {
+    0% {
+        transform: translateY(0px);
+        filter: drop-shadow(4px 11px 3px rgba(0, 0, 0, 0.3));
+    }
+    100% {
+        transform: translateY(4px);
+        filter: drop-shadow(4px 7px 2px rgba(0, 0, 0, 0.3));
+    }
+}
+
+
+#pose {
+    pointer-events: all;
+    animation: pose 1s infinite alternate ease-in-out;
+}
+
+@keyframes pose {
+    0% {
+        transform: translateY(-10px);
+        filter: drop-shadow(4px 13px 3px rgba(0, 0, 0, 0.5));
+    }
+    100% {
+        transform: translateY(0px);
+        filter: drop-shadow(4px 7px 2px rgba(0, 0, 0, 0.5));
+    }
+}
+
+.pose img {
+    pointer-events: all;
+}
+
+.pose:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: linear-gradient(#555, #777);
+    box-shadow: 0px 4px 4px #00000099;
+}
+
+.pose:active {
+    transform: translateY(0px) scale(0.95);
+    background: linear-gradient(#555, #777);
+    box-shadow: 0px 0px 0px #00000099;
+}
+
+#posename {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 200px;
+    padding: 5px 10px;
+    background-color: #00000099;
+    color: #fff;
+    border-top-right-radius: 5px;
+    display: none;
+}
+
+#back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 24px;
+    width: 24px;
+    padding: 5px;
+    fill: white;
+    background: #00000000;
+    border-radius: 5px;
+    pointer-events: all;
+    opacity: 50%;
+}
+
+#back:hover {
+    opacity: 80%;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .creator {
+        min-height: 400px;
+    }
+
+    #final {
+        flex-direction: column;
+    }
+
+    .user {
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .user img {
+        width: auto;
+        height: 200px;
+        background: none;
+        position: absolute;
+        top: -20px;
+        left: 50px;
+    }
+
+    .user p {
+        position: absolute;
+        left: 180px;
+        top: 28px;
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .user #whash {
+        position: absolute;
+        left: 180px;
+        top: 55px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .pose {
+        width: 72px;
+        height: 72px;
+    }
+
+    .back {
+        z-index: 9999999;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .creatorIframe {
+        min-height: 500px;
+    }
+}
