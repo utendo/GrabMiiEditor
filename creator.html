@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Creator - GrabMii</title>
+        <meta name="description" content="Get your favorite Mii data from Nintendo servers">
+        <meta name="theme-color" content="#446B6E">
+        <meta property="og:title" content="GrabMii - Get your favorite Mii data from Nintendo servers" />
+        <meta property="og:type" content="website" />
+        <link rel="icon" href="./assets/favicon.png">
+        <meta property="og:url" content="https://grabmii.utendo.me/" />
+        <meta property="og:image" content="./assets/banner.png" />
+        <meta property="og:site_name" content="Utendo" />
+        <meta property="og:description" 
+        content="GrabMii is an API to download mii data and poses directly from Nintendo." />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/creator.css">
+    </head>
+    <body class="creatorBody">
+            <p class="version">v1.12</p>
+
+            <div class="fullCreator">
+                <div id="intro">
+                    <div class="intl">
+                        <img src="./assets/miis.png" alt="miis"/>
+                        <div class="intl_text">
+                            <h2>Download your Mii's best poses.</h2>
+                            <p>GrabMii can retreive your Mii from your Nintendo Network ID (NNID) and show data to download your poses or get your ID for Warawara Plaza.</p>
+                            <small>API reference is under the Creator.</small>
+                        </div>
+                    </div>
+
+                    <div class="start">
+                        <h3>Enter an NNID to get started.</h3>
+                        <input type="text" id="nnid" placeholder="marioplays140">
+                        <button onclick="startGenerator()">Let's go !</button>
+                    </div>
+                </div>
+
+                <div id="loading">
+                    <img src="./assets/loader.gif" alt="loader"/>
+                </div>
+
+                <div id="error">
+                    <p>This NNID does not exist.</p>
+                </div>
+
+                <div id="final">
+                    <div class="user">
+                        <img id="pose" class="user">
+                        <p id="user-name"></p>
+                        <a id="whash" onclick="copyWhash();">copy whash</a>
+                    </div>
+                    <div class="poses">
+                        <h3>Poses</h3>
+                        <p class="subtitl">showing all <span id="posecount">20</span> poses</p>
+                        <div id="poses"></div>
+                    </div>
+
+                    <svg id="back" onclick="resetGen()" width="32" height="24" viewBox="0 0 32 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1 14.4L19.7 24H12.5L0.5 12L12.5 0H19.7L10.1 9.6L31.7 9.59997V14.4L10.1 14.4Z"/>
+                    </svg>
+                </div>
+            </div>
+        
+        <script src="js/jquery.js" async defer></script>
+        <script src="js/app.js" async defer></script>
+    </body>
+</html>
